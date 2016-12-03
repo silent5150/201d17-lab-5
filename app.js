@@ -59,7 +59,7 @@ function sumAndMultiply(a,b,c){ //eslint-disable-line
   var product = multiply(multiply(a,b)[0],c)[0];
   var messageSum = a + ' and ' + b + ' and ' + c + ' sum to ' + add + '.';
   var messageMultiply = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + product + '.';
-  console.log(add,product,messageSum,messageMultiply);
+  // console.log(add,product,messageSum,messageMultiply);
   return [add,product,messageSum,messageMultiply];
 }
 
@@ -74,6 +74,7 @@ Write a function called sumArray() that takes in an array of numbers as its sing
 
 "2,3,4 was passed in as an array of numbers, and 9 is their sum."
 
+
 IMPORTANT DETAIL: You may not use the arithmetic operator + in this function. To do addition, use your sum() function that you've already created. You're going to have to be resourceful to figure out how to do this.
 
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumArray() function and see if the test passes.*/
@@ -82,12 +83,20 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2,3,4]; //eslint-disable-line
 
 function sumArray(testArray){ //eslint-disable-line
-
+  var a = testArray[0];
+  var b = testArray[1];
+  var c = testArray[2];
+  var add = sum(sum(a,b)[0],c)[0];
+  var message = a + ',' + b + ',' + c + ' was passed in as an array of numbers, and ' + add +' is their sum.';
+  var messageAdd = message.toString();
+  console.log(add);
+  console.log(messageAdd);
+  console.log([[add],messageAdd]);
+  return[[add],messageAdd.toString()];
 }
-
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
